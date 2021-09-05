@@ -204,35 +204,39 @@ function test() {
   //   ]
   // }
 
-  // var MSamples = {
-  //   DM2000 : [
-  //     "M20,00"
-  //   ],
-  //  DM2060 : [
-  //    "M20,60"
-  //  ],
-  //  "DM4040" : [
-  //    "M40,40"
-  //  ],
-  //  DM4060 :[
-  //    "M40,60"
-  //  ],
-  //  "DM2040" : [
-  //    "M20,40"
-  //  ],
-  //  DM3040 : [
-  //    "M30,40"
-  //  ],
-  //  DM3060 : [
-  //    "M30,60"
-  //  ],
-  //  DM2070 : [
-  //    "M20,70"
-  //  ],
-  //  Space : [
-  //  " "
-  //  ]
-  // }
+  var MSamples = {
+    DM2000 : [
+      "M20,00"
+    ],
+   DM2060 : [
+     "M20,60"
+   ],
+   "DM4040" : [
+     "M40,40"
+   ],
+   DM4060 :[
+     "M40,60"
+   ],
+   "DM2040" : [
+     "M20,40"
+   ],
+   DM3040 : [
+     "M30,40"
+   ],
+   DM3060 : [
+     "M30,60"
+   ],
+   DM2070 : [
+     "M20,70"
+   ],
+   Space : [
+   " "
+   ]
+  }
+
+  let M20 = [20];
+  let M30 = [30];
+  let M40 = [40];
 
 
   
@@ -249,82 +253,66 @@ function test() {
   console.log(answers2);
 var input = document.getElementById("buttonlog").value;
 var renderer = i2d.canvasLayer("#myCanvas", {}, {});
+console.log(answers2.split(''));
+let answersString = answers2.split('');
 
-let answersString = Object.entries(answers2);
-
-console.log(answersString);
 console.log(typeof answersString);
 
+// let answersString2 = String(answers2);
+// console.log(answersString2);
+// console.log(typeof answersString2);
 
-// var answersObject = _.invert(answersString);
-// console.log(answersObject);
-// console.log(Object.values(answersString));
-// let answers5 = Object.values(answersString);
-
-
-let result  = Object.fromEntries(
-  Object.entries(answers2).map(([k, v]) => [k, MSamples[v] ])
-);
-console.log(result);
-// console.log(Object.values(MSamples));
-// console.log(typeof result);
-// console.log(result.includes('M20,60'))
-
-// Bellow is a way how I can turn an array to a string then back into a array
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-console.log(fruits)
-let text = fruits.toString();
-console.log(text);
-let MyFruits = text.split(",")
-console.log(MyFruits);
-if ("A".includes('M20,60')) {
-  console.log('YES')
-}
-for (let i = 0; i < result.forEach; i++) {
-  if (result.includes('M20,60')) {
-    // let soultion1 = "M" + ((20 + 20).toString() + "," + (60 + 00).toString() + " " + M2060[answersString]); 
+var answersObject = _.invert(answersString);
+console.log(answersObject);
+console.log(Object.values(answersString));
+let answers5 = Object.values(answersString);
+console.log(answers5);
+for (let i = 0; i < answers5.length; i++) {
+  if (M2060[answers5]) {
+    let soultion1 = "M" + ((20 + 20).toString() + "," + (60 + 00).toString() + " " + M2060[answers2]); 
+    
     console.log('this is M20,60');
-    console.log(soultion1);
-    console.log(typeof soultion1);
+    console.log(soultion);
+    console.log(typeof answers2);
     return soultion1;
     // check if what number in the order it is
-  } else if (result.includes('M40,40') ) {
-    let soultion2 = "M" + ((40 + 20).toString() + "," + (40 + 00).toString() + " " + M4040[answersString]); 
+  } else if (M4040[answersObject] ) {
+    let soultion2 = "M" + ((40 + 20).toString() + "," + (40 + 00).toString() + " " + M4040[answers2]); 
     console.log('this is M40,40');
 console.log(soultion2);
-  } else if (result.includes('M40,60') ) {
-   
+  } else if (M4060[answersObject] ) {
+    let soultion = "M" + ((40 + 20).toString() + "," + (60 + 00).toString() + " " + M4060[answers2]); 
     console.log('this is M40,60');
     console.log(soultion);
     return soultion;
     // check if what number in the order it is
 
     // check if what number in the order it is
-  } else if (result.includes('M20,40') ) {
-    let soultion = "M" + ((20 + 20).toString() + "," + (40 + 00).toString() + " " + M2040[answersString]); 
+  } else if (M2040[answersObject] ) {
+    let soultion = "M" + ((20 + 20).toString() + "," + (40 + 00).toString() + " " + M2040[answers2]); 
     console.log('this is M20,40');
     console.log(soultion);
     console.log(typeof soultion);
     return soultion;
     // check if what number in the order it is
-  } else if (result.includes('M30,40')) {
-    let soultion = "M" + ((30 + 20).toString() + "," + (40 + 00).toString() + " " + M3040[answersString]); 
+  } else if (M3040[answersObject]) {
+    let soultion = "M" + ((30 + 20).toString() + "," + (40 + 00).toString() + " " + M3040[answers2]); 
     console.log('this is M30,40');
     console.log(soultion);
     console.log(typeof soultion);
     return soultion;
     // check if what number in the order it is
   }
-  else if (result.includes('M30,60')) {
-    let soultion = "M" + ((30 + 20).toString() + "," + (60 + 00).toString() + " " + M3060[answersString]); 
+  else if (M3060[answersObject] ) {
+    let soultion = "M" + ((30 + 20).toString() + "," + (60 + 00).toString() + " " + M3060[answers2]); 
     console.log('this is M30,60');
     console.log(soultion);
     console.log(typeof soultion);
     // check if what number in the order it is
     return soultion;
   }
-  else if (result.includes('M20,70') ) {
-    let soultion = "M" + ((20 + 20).toString() + "," + (70 + 00).toString() + " " + M2070[answersString]); 
+  else if (M2070[answersString] ) {
+    let soultion = "M" + ((20 + 20).toString() + "," + (70 + 00).toString() + " " + M2070[answers2]); 
     console.log('this is M20,70');
     console.log(soultion);
     console.log(typeof soultion);
@@ -341,18 +329,21 @@ console.log(soultion2);
   else  ()  => {
     console.log('Something is wrong');
   }
-}
 
-//   console.log(M2060[answersString] || M4040[answersString]  || M4060[answersString] || M2040[answersString] || M3040[answersString] || M3060[answersString] || M2070[answersString] );
-// console.log(answersString);
-// }
+
+console.log(i);
+console.log(typeof i);
+alert(answersString[i]);
+console.log(answersString[i])
+}
+console.log(soultion)
 
   var Answers = document.getElementById('fname').value;
   var answers2 = document.getElementById('fname').value;
   var input = document.getElementById("buttonlog").value;
   var renderer = i2d.canvasLayer("#myCanvas", {}, {});
   // console.log(CapitalLetters.hasOwnProperty('A'));
-  console.log(result);
+  console.log(answers2);
 
 //   for (let sh = 1; i < answersSplit.length; i++) { 
 //     let soultion = "M" + ((20 + 20).toString() + "," + (60 + 00).toString() + " " + M2060[answers2]); 
@@ -360,13 +351,14 @@ console.log(soultion2);
 
 // console.log(sum);
 //   }
-console.log(result);
-  if(MSamples.hasOwnProperty(result) ) {
+
+  console.log(soultion)
+  if(M2060.hasOwnProperty(answers2) || M4040.hasOwnProperty(answers2)  || M4060.hasOwnProperty(answers2) ||  M2040.hasOwnProperty(answers2) || M3040.hasOwnProperty(answers2) || M3060.hasOwnProperty(answers2)|| M2070.hasOwnProperty(answers2) ) {
     console.log('yes')
-    console.log(MSamples[result] );
-    var answers1 = MSamples[result] ;
+    console.log(M2060[answers2] || M4040[answers2]  || M4060[answers2] || M2040[answers2] || M3040[answers2] || M3060[answers2] || M2070[answers2] );
+    var answers1 = M2060[answers2] || M4040[answers2]  || M4060[answers2] || M2040[answers2] || M3040[answers2] || M3060[answers2] || M2070[answers2] 
     // I could switch answers1 with soultion
-   console.log(answers1)
+   console.log(answers2)
    // answers2 is the full d=" " script
     console.log(typeof answers1)
    console.log(answers1.join());
@@ -440,14 +432,14 @@ console.log(result);
 //             ChainInstance.start();
 //         }
    
-// Mvariables = {
-//   M2060:[ 'M20,60'],
-//   M4040: ['M40,40'],
-//   M2040:["20,40"],
-//   M3040:[ 'M30,40'],
-//   M3060: ['M30,60'],
-//   M2070:[ 'M20,70'],
-// }
+Mvariables = {
+  M2060:[ 'M20,60'],
+  M4040: ['M40,40'],
+  M2040:["20,40"],
+  M3040:[ 'M30,40'],
+  M3060: ['M30,60'],
+  M2070:[ 'M20,70'],
+}
 
 
 // I am also going to have tp figure out a way to make it so letters and numers equal these variables
