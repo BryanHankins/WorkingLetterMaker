@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/rainbow.css">    
+    <title>AnimationProject</title>
+</head>
+
+<body>
+        
+        <div id="myCanvas" class="SVGDIVcontainer">
+            
+            <div class="canvasanimationblock"></div>
+            <div class="canvasanimationblock"></div>
+            <div class="canvasanimationblock"></div>
+        
+        </div>
+    <!-- <div  id="myCanvas "></div> -->
+    <form  class="form1 "action="">
+        <input type="text" id="fname" name="fname" value="v" >
+        
+    </form>
+    <button type="submit" id="buttonlog" onclick="test();">console input</button>
+    
+    <script src="https://i2djs.github.io/I2Djs/dist/i2d.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.1/underscore-umd-min.js"></script>
+
+
+    <script type="text/javascript" src="js/straight.js"></script>
+    <script type="text/javascript" src="js/letters.js"></script>
+    <script type="text/javascript" src="js/i2djs.js"></script>
+    <script type="text/javascript" src="js/lodash.js"></script>
+    <!-- <script type="text/javascript" src="js/chainanimation.js"></script> -->
+
+<script type="text/javascript" id="animationscript">
+
+
+
+
+   
+       
+    let ChainInstance = i2d.chain.sequenceChain();
+    // console.log(i2d.chain);
+    console.log(ChainInstance);
+    
+    let junk = ('M50,50  l10,16 l10,-16')
+        
+   
+  var nodes = renderer.createEl({ 
+            el: "path",
+           attr: {
+            d:   "M40,40  h20 l-20,40"
+            // v- = up  v+ = down h+ = right h- = left
+            },
+            style: {
+                lineWidth: 5,
+                strokeStyle: "#f00000",
+                shadowColor: "red",
+                lineCap: "round",
+            },
+        });
+        nodes.animatePathTo({
+            duration: 1000,
+            loop: 1,
+            ease: "linear",
+            direction: "alternate",
+        })
+        ChainInstance.start();
+    ChainInstance.start();        
+  
+
+// function bobs() {
+//         let ChainInstance = i2d.chain.sequenceChain()
+//         nodes.createEl(ChainInstance.children, {
+//             el: "path",
+//            attr: {
+//             parse: 'M20,36  l10,16 l10,-16',
+//             },
+//             style: {
+//                 lineWidth: 5,
+//                 strokeStyle: "#f00000",
+//                 shadowColor: "red",
+//                 lineCap: "round",
+//             },
+//         }).forEach(function chains(){
+//             ChainInstance(this.animateExe({
+//                 duration:1000,
+//                 ease: 'linear',
+                
+//             end: function (d) {
+//          nodes.createEl({
+//               el: 'linear ',
+//               attr: {
+//                parse: "M24,40 v-3 h10 h-10 v10 h10 h-10 v10 h10 h-10" 
+//               },
+//               style: { lineWidth: 5,
+//                 strokeStyle: "#f00000",
+//                 shadowColor: "red",
+//                 lineCap: "round", }
+//          });
+//             }})
+//             )});
+            
+//         }
+//         var nodes1 = renderer.setAttr('d', answers1)
+    
+        
+        
+  </script>
+
+    
+</body>
+
+</html>
